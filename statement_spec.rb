@@ -40,7 +40,7 @@ RSpec.describe Statement do
       statement = Statement.new "John Doe", rentals
       expect(statement.formatted_cost).to eq "You owe: £2.00"
     end
-    it "should display the cost correctly when £2" do
+    it "should display the cost correctly when £1.50" do
       m1 = Movie.new "Harry Potter and the Prisoner of Azkaban", "Child"
       rentals = []
 
