@@ -55,4 +55,34 @@ RSpec.describe Cost do
       expect(cost).to eq 6
     end
   end
+  describe "calculate cost of regular movie rental" do
+    before(:all) do
+      @movie = Movie.new "Regular movie title", "Regular"
+    end
+
+    it "should return £2 for the first two days - 1 day rental" do
+      days = 1
+      cost = Cost.calculate @movie, days
+
+      expect(cost).to eq 2
+    end
+    it "should return £2 for the first two days - 2 days rental" do
+      days = 2
+      cost = Cost.calculate @movie, days
+
+      expect(cost).to eq 2
+    end
+    it "should return £1.5 per day after 2 days - 3 days rental is £3.5" do
+      days = 3
+      cost = Cost.calculate @movie, days
+
+      expect(cost).to eq 3.5
+    end
+    it "should return £1.5 per day after 2 days - 5 days rental is £6.5" do
+      days = 5
+      cost = Cost.calculate @movie, days
+
+      expect(cost).to eq 6.5
+    end
+  end
 end
