@@ -4,9 +4,7 @@ class Points
   def self.calculate movie, days
     @points = 1
 
-    if movie.is_new_release
-      (days - 1).times { @points +=2 }
-    end
+    (days - 1).times { @points +=2 } unless !movie.is_new_release
 
     @points
   end

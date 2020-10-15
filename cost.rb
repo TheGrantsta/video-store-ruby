@@ -19,11 +19,13 @@ class Cost
   def self.calculate_cost_without_discount days
     calculate_cost_per_day days, 3
   end
+
   def self.calculate_cost_with_discount initialCost, days, discountDays
     @cost = initialCost
 
     calculate_cost_per_day days - discountDays, 1.5
   end
+
   def self.calculate_cost_per_day days, cost
     days.times { @cost += cost}
   end
