@@ -12,4 +12,16 @@ class Movie
       @type = "UNKNOWN"
     end
   end
+
+  def is_new_release
+    return @type == "NewRelease"
+  end
+
+  def is_regular
+    return @type == "Regular"
+  end
+
+  def is_child
+    return @type == "Child"
+  end
 end

@@ -4,9 +4,9 @@ class Cost
   def self.calculate movie, days
     @cost = 0
 
-    if movie.type == "NewRelease"
+    if movie.is_new_release
       calculate_cost_without_discount days
-    elsif movie.type == "Regular"
+    elsif movie.is_regular
       calculate_cost_with_discount 2, days, 2
     else
       calculate_cost_with_discount 1.5, days, 3
