@@ -1,9 +1,9 @@
 require_relative "movie"
 
 class Cost
-  @cost = 0;
-
   def self.calculate movie, days
+    @cost = 0
+
     if movie.type == "NewRelease"
       calculate_cost_without_discount days
     elsif movie.type == "Regular"
@@ -17,11 +17,16 @@ class Cost
 
   private
   def self.calculate_cost_without_discount days
-    @cost = days * 3
+    calculate_cost_per_day days, 3
   end
   def self.calculate_cost_with_discount initialCost, days, discountDays
     @cost = initialCost
 
-    (days - discountDays).times { @cost += 1.5 }
+    calculate_cost_per_day days - discountDays, 1.5
+
+    #(days - discountDays).times { @cost += 1.5 }
+  end
+  def self.calculate_cost_per_day days, cost
+    days.times { @cost += cost}
   end
 end
