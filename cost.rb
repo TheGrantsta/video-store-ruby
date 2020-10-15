@@ -23,8 +23,6 @@ class Cost
     @cost = initialCost
 
     calculate_cost_per_day days - discountDays, 1.5
-
-    #(days - discountDays).times { @cost += 1.5 }
   end
   def self.calculate_cost_per_day days, cost
     days.times { @cost += cost}
