@@ -16,7 +16,7 @@ class Statement
   def movie_list
     movieList = ""
 
-    @rentals.each {|r| movieList += %Q{#{r.movie}\n} }
+    @rentals.each {|r| movieList += %Q{#{r.movie} #{format_cost Cost.calculate(r.movie, r.days)}\n} }
 
     movieList
   end
@@ -26,7 +26,7 @@ class Statement
 
     @rentals.each {|r| cost += Cost.calculate(r.movie, r.days) }
 
-    format_cost cost
+    "You owe: #{format_cost cost}"
   end
 
   def formatted_points
@@ -43,6 +43,10 @@ class Statement
 
   private
   def format_cost cost
-    "You owe: £#{cost}0"
+    if cost.to_s.include? "."
+      return "£#{cost}0"
+    else
+      return "£#{cost}.00"
+    end
   end
 end
