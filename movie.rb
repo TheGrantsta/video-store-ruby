@@ -24,4 +24,8 @@ class Movie
   def is_child
     return @type == "Child"
   end
+
+  def to_s
+    @title
+  end
 end

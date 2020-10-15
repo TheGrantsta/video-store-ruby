@@ -2,15 +2,15 @@
 class Statement
   attr_reader :customerName
 
-  def initialize customerName, movies
+  def initialize customerName, rentals
     @customerName = customerName
-    @movies = movies
+    @rentals = rentals
   end
 
   def movie_list
     movieList = ""
 
-    @movies.each {|m| movieList += %Q{#{m.title}\n} }
+    @rentals.each {|r| movieList += %Q{#{r.movie}\n} }
 
     movieList
   end

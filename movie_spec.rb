@@ -48,4 +48,9 @@ RSpec.describe Movie do
     expect(movie.title).to eq "Children's movie title"
     expect(movie.type).to eq "Child"
   end
+  it "should return movie title when object to_s" do
+    movie = Movie.new "Children's movie title", "Child"
+
+    expect("#{movie}").to eq "Children's movie title"
+  end
 end
