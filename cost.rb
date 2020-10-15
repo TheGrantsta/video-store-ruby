@@ -5,7 +5,7 @@ class Cost
 
   def self.calculate movie, days
     if movie.type == "NewRelease"
-      @cost = days * 3
+      calculate_cost_without_discount days
     elsif movie.type == "Regular"
       calculate_cost_with_discount 2, days, 2
     else
@@ -16,6 +16,9 @@ class Cost
   end
 
   private
+  def self.calculate_cost_without_discount days
+    @cost = days * 3
+  end
   def self.calculate_cost_with_discount initialCost, days, discountDays
     @cost = initialCost
 
