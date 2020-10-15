@@ -20,12 +20,12 @@ RSpec.describe Statement do
     expect("#{@statement}").to eq "Rental record for John Doe"
   end
   it "should display the videos rented" do
-    expect(@statement.movie_list).to eq "Harry Potter and the Prisoner of Azkaban\nHarry Potter and the Goblet of Fire\n"
+    expect(@statement.movie_list).to eq "     Harry Potter and the Prisoner of Azkaban\n     Harry Potter and the Goblet of Fire\n"
   end
   it "should display the formatted cost of the videos rented" do
     expect(@statement.formatted_cost).to eq "You owe: £4.50"
   end
   it "should display the formatted frequent renter points" do
-    expect(@statement.formatted_points).to eq "You earned 2 frequent renter points"
+    expect(@statement.formatted_points).to eq "You earned: 2 frequent renter points"
   end
 end

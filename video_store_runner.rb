@@ -15,6 +15,7 @@ puts "*******************************\n"
 puts "#{statement}"
 puts statement.movie_list
 puts statement.formatted_cost
+puts statement.formatted_points
 puts
 puts "*******************************\n"
 puts

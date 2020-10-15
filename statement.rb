@@ -30,7 +30,7 @@ class Statement
 
     @rentals.each {|r| points += Points.calculate(r.movie, r.days)}
 
-    "You earned #{points} frequent renter points"
+    "You earned: #{points} frequent renter points"
   end
 
   def to_s

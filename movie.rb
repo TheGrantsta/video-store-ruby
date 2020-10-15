@@ -26,6 +26,6 @@ class Movie
   end
 
   def to_s
-    @title
+    "     #{@title}"
   end
 end

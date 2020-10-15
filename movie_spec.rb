@@ -51,6 +51,6 @@ RSpec.describe Movie do
   it "should return movie title when object to_s" do
     movie = Movie.new "Children's movie title", "Child"
 
-    expect("#{movie}").to eq "Children's movie title"
+    expect("#{movie}").to eq "     Children's movie title"
   end
 end
