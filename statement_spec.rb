@@ -29,6 +29,6 @@ RSpec.describe Statement do
   it "should display the formatted cost of the videos rented" do
     statement = Statement.new "Jane Jones", @rentals
 
-    #expect(statement.formatted_cost).to eq "£"
+    expect(statement.formatted_cost).to eq "You owe: £4.50"
   end
 end
