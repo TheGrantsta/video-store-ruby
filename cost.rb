@@ -22,6 +22,6 @@ class Cost
   def self.calculate_cost_with_discount initialCost, days, discountDays
     @cost = initialCost
 
-    (days - discountDays).times { @cost += 1.5 } unless days <= discountDays
+    (days - discountDays).times { @cost += 1.5 }
   end
 end
