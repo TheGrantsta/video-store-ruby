@@ -9,6 +9,10 @@ class Statement
     @rentals = rentals
   end
 
+  def formatted_title
+    "Rental record for #{@customerName}"
+  end
+
   def movie_list
     movieList = ""
 
@@ -34,7 +38,7 @@ class Statement
   end
 
   def to_s
-    "Rental record for #{@customerName}"
+    "\n*********************************************\n#{formatted_title}\n\n#{movie_list}\n#{formatted_cost}\n#{formatted_points}\n*********************************************\n\n"
   end
 
   private

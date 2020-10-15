@@ -17,7 +17,7 @@ RSpec.describe Statement do
     expect(@statement.customerName).to eq "John Doe"
   end
   it "should display 'Rental record for [customer name]'" do
-    expect("#{@statement}").to eq "Rental record for John Doe"
+    expect(@statement.formatted_title).to eq "Rental record for John Doe"
   end
   it "should display the videos rented" do
     expect(@statement.movie_list).to eq "     Harry Potter and the Prisoner of Azkaban\n     Harry Potter and the Goblet of Fire\n"
