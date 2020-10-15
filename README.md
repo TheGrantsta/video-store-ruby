@@ -26,3 +26,17 @@ Childrens Movies
 Are £1.50 for the first 3 days, and £1.50 for each day thereafter.
 
 You earn 1 frequent renter point no matter the length of the rental.
+
+Example output:
+
+*********************************************
+Rental record for Bob The Builder
+
+     Harry Potter and the Prisoner of Azkaban £3.00 (4 days)
+     Harry Potter and the Goblet of Fire £1.50 (2 days)
+     James Bond - Quantum of Solace £2.00 (1 day)
+     Trent £9.00 (3 days)
+
+You owe: £15.50
+You earned: 8 frequent renter points
+*********************************************
