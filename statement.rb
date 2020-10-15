@@ -16,7 +16,7 @@ class Statement
   def movie_list
     movieList = ""
 
-    @rentals.each {|r| movieList += %Q{#{r.movie} #{format_cost Cost.calculate(r.movie, r.days)}\n} }
+    @rentals.each {|r| movieList += %Q{#{r.movie} #{format_cost Cost.calculate(r.movie, r.days)} #{format_day_label r.days}\n} }
 
     movieList
   end
@@ -48,5 +48,15 @@ class Statement
     else
       return "£#{cost}.00"
     end
+  end
+
+  def format_day_label days
+    days_label = "(#{days} days)"
+
+    if days == 1
+      days_label = "(#{days} day)"
+    end
+
+    days_label
   end
 end
