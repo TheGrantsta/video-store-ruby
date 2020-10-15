@@ -19,13 +19,14 @@ class Cost
       @cost = days * 3
   end
   def self.calculate_regular_rental days
-    @cost = 2
-
-    (days - 2).times { @cost += 1.5 } unless days <= 2
+    calculate_cost_with_discount 2, days, 2
   end
   def self.calculate_child_movie_rental days
-      @cost = 1.5
+    calculate_cost_with_discount 1.5, days, 3
+  end
+  def self.calculate_cost_with_discount initialCost, days, discountDays
+    @cost = initialCost
 
-      (days - 3).times { @cost += 1.5 } unless days <= 3
+    (days - discountDays).times { @cost += 1.5 } unless days <= discountDays
   end
 end
