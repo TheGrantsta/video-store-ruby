@@ -1,14 +1,24 @@
 require_relative "movie"
 
 class Cost
+  @cost = 0;
   def self.calculate movie, days
-    cost = 1.5
-    if days <= 3
-      cost
+    if movie.type == "NewRelease"
+      calculate_new_release_rental days
     else
-      (days - 3).times { cost += 1.5 }
+      calculate_child_movie_rental days
     end
-    
-    cost
+
+    @cost
+  end
+
+  private
+  def self.calculate_new_release_rental days
+      @cost = days * 3
+  end
+  def self.calculate_child_movie_rental days
+      @cost = 1.5
+
+      (days - 3).times { @cost += 1.5 } unless days <= 3
   end
 end
