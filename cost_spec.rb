@@ -5,7 +5,6 @@ RSpec.describe Cost do
     before(:all) do
       @movie = Movie.new "Children's movie title", "Child"
     end
-
     it "should return £1.50 for first three days" do
       days = 1
       cost = Cost.calculate @movie, days
